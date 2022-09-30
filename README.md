@@ -1,23 +1,24 @@
-## Update Setting
+<p align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NanoSpacePlus&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=gradient"/> </a> 
+</p>
 
-## 📄 โปรดอ่าน
+<p align="center"> 
+  <a href="https://ko-fi.com/nanotect" target="_blank"> <img src="https://ko-fi.com/img/githubbutton_sm.svg"/> </a> 
+</p>
 
-*ลิขสิทธิ์ Apache License 2.0 จาก Adivise/NanoSpacePlus* [กดเพื่ออ่าน](https://github.com/KCCHDEV/Makori-Music/blob/main/LICENSE)
-
-*Prefix Commands!* | **[NanoSpace](https://github.com/Adivise/NanoSpace)**
-
-## 📑 ระบบแบบย่อๆ
+## 📑 Feature
 - [x] Music System
 - [x] Playlists System
 - [x] Premium System
 - [x] Setup Request System
+- [x] AutoComplete (Play, Playskip, Playtop)
 - [x] Multi Language
-- [x] SlashCommand
-- [x] ContextMenus
+- [x] Slash Command (Base, Group, Sub)
+- [x] Context Message Menu
 - [x] Custom Filters
 - [x] Easy to use
 
-## 🎶 รับลองการเล่นจาก
+## 🎶 Support Source
 - [x] Youtube
 - [x] SoundCloud
 - [x] Spotify
@@ -29,12 +30,12 @@
 - [x] Vimeo
 - [x] Https (Radio)
 
-<details><summary>📎 Requirements [กดเพื่อดู]</summary>
+<details><summary>📎 Requirements [CLICK ME]</summary>
 <p>
 
 ## 📎 Requirements
 
-- Node.js Version 16.6.0+ **[Download](https://nodejs.org/en/download/)**
+- Node.js v16+ **[Download](https://nodejs.org/en/download/)**
 - Discord Bot Token **[Guide](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)**
 - LavaLink **[Guide](https://github.com/freyacodes/lavalink)** (*Dev Version!* **[Download](https://ci.fredboat.com/repository/downloadAll/Lavalink_Build/9311:id/artifacts.zip)** )
 - MongoDB **[Download](https://www.mongodb.com/try/download/community)** (Download & install = Finish!)
@@ -46,7 +47,7 @@
 </p>
 </details>
 
-## 📚 ขั้นตอนการติดตั้ง
+## 📚 Installation
 
 ```
 git clone https://github.com/Adivise/NanoSpacePlus
@@ -54,19 +55,12 @@ cd NanoSpacePlus
 npm install
 ```
 
-## 📚 วิธีการรัน
-
-```
-npm start
-npm run dev
-```
-
-<details><summary>📄 Configuration [กดเพื่อดู]</summary>
+<details><summary>📄 Configuration [CLICK ME]</summary>
 <p>
 
 ## 📄 Configuration
 
-เปลี่ยนชื่อ `.env.example` เป็น `.env` และทำการใส่ข้อมูลให้ครบ:
+Copy or Rename `.env.example` to `.env` and fill out the values:
 
 ```.env
 # Bot
@@ -80,7 +74,7 @@ EMBED_COLOR=#000001
 OWNER_ID=REPLACE_HERE
 
 # Database
-MONGO_URI=mongodb://127.0.0.1:27017/nanospace
+MONGO_URI=mongodb://127.0.0.1:27017/nanospaceplus
 LIMIT_TRACK=50
 LIMIT_PLAYLIST=10
 
@@ -89,7 +83,7 @@ NODE_HOST=localhost
 NODE_PORT=5555
 NODE_PASSWORD=123456
 ```
-หล้งจากใส่ข้อมูลเสร็จแล้วและ npm i เสร็จแล้ววิธีรัน npm start หรือถ้าใช้ Windows สามารถใช้ Start.bat
+After installation or finishes all you can use `node .` to start the bot. or `Run Start.bat`
 
 </p>
 </details>
@@ -99,11 +93,22 @@ NODE_PASSWORD=123456
 
 ## 🔩 Features & Commands
 
-> Note: prefix เริ่มต้นคือ '#'
+> Note: The default prefix is '/'
+
+💬 **Context Menu**
+- Play (Right-Click & Apps > Context | Play) 
+- Skip (Right-Click & Apps > Context | Skip) 
+- Stop (Right-Click & Apps > Context | Stop) 
+- Shuffle (Right-Click & Apps > Context | Shuffle) 
+- Loop (Right-Click & Apps > Context | Loop) 
+
+💬 **Extra Commands!**
+- Play (/extra play) 
 
 🎶 **Music Commands!** 
 
-- Play (/music play [song/url])
+- Play (/play [song/url])
+- Search (/search [songname])
 - Nowplaying (/music nowplaying)
 - Queue (/music queue [page])
 - Repeat (/music loop type [current, all])
@@ -121,10 +126,13 @@ NODE_PASSWORD=123456
 - Seek (/music seek [second])
 - Rewind (/music rewind [second])
 - Replay (/music replay)
-- Search (/music search [songname])
 - 247 (/music 247)
 - Previous (/music previous)
 - Autoplay (/music autoplay)
+- Move (/music move [song] [position])
+- Remove (/music remove [song])
+- PlaySkip (/music playskip [song/url])
+- SearchSkip (/music searchskip [songname])
 
 ⏺ **Filter Commands!**
 - Bass (/filter bass)
@@ -162,18 +170,21 @@ NODE_PASSWORD=123456
 - Import (/playlist import [name])
 - Detail (/playlist detail [name])
 - Remove (/playlist remove [name] [position])
-- Savequeu (/playlist savequeue [name])
+- Savequeue (/playlist savequeue [name])
 - View (/playlist view)
 	
 💎 **Premium Commands!**
-- Premium (/premium premium [plan] [user id])
+- Profile (/profile)
 - Generate (/premium generate [plan] [amount]) // (OWNER ONLY)
 - Redeem (/premium redeem [code])
-- Setup (/premium setup type [create/delete])
+- Setup (/premium setup)
+- Remove (/premium remove [mention]) // (OWNER ONLY)
 	
 📑 **Utilities Commands!**
 - Restart (/utilitie restart) // (OWNER ONLY)
 - Language (/utilitie language input: [language] ) // Example: en, th
+- Help (/help)
 
 </p>
 </details>
+
